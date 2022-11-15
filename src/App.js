@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+const App = () =>{
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const bootcamps =[
+        {id:1,
+          name: 'PHP bootcamp',
+         average_rating: 10 },
+         {id:1,
+            name: 'javascript bootcamp',
+           average_rating: 10 }
+    ]
+    return(
+        <div>
+          <h1>Listado de bootcamps</h1>
+            <ul>
+{bootcamps.map((bootcamp, index) => (
+    <li key={index} > { bootcamp.name } </li>
+)) }
+            </ul>
+        </div>
+    )
 }
 
-export default App;
+
+export default App 
