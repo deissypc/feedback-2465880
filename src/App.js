@@ -1,4 +1,4 @@
-//dependencias necesarias
+ //dependencias necesarias
 import { useState } from "react";
 //data
 import Resenias from "./data/Resenias";
@@ -13,9 +13,16 @@ import ReseniaList from "./componentes/ReseniaList";
         const [lista_resenias,
               setListaResenias] = useState(Resenias)
 
+              //metodo para borrar una resenia;
+              const deleteResenia = id =>{
+                 window.confirm("esta seguro de borrar la resenia")
+              }
+
         return (
             <div className="container">
-                <ReseniaList listaresenias={lista_resenias}/>
+                <ReseniaList 
+                deleteResenia={deleteResenia}
+                listaresenias={lista_resenias}/>
             </div>
         )
     }
